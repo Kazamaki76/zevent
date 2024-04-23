@@ -5,7 +5,6 @@ const messageInput = document.getElementById("message");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // ป้องกันการส่งฟอร์มตามปกติ
-
   // Validate
   const name = nameInput.value.trim();
   const emailOrPhone = emailOrPhoneInput.value.trim();
@@ -33,12 +32,13 @@ form.addEventListener("submit", function (event) {
   }
 
   // แสดง alert และ console log ข้อมูลที่กรอก
+  alert(`Message: ${message}`);
+  
   const formData = {
     name,
     emailOrPhone,
     message,
   };
 
-  alert(`Message: ${message}`);
   console.log(JSON.stringify(formData, null, 2));
 });
